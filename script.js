@@ -99,7 +99,11 @@ const operators = [
 
 // Dot Btn and Equal Btn
 dotButton.addEventListener ('click', () => {
-    calculatorScreen.textContent += '.';
+    if (calculatorScreen.textContent.includes('.')) {
+        console.log('no more dot 4 u');
+    } else {
+        calculatorScreen.textContent += '.';
+    }
 })
 
 equalBtn.addEventListener ('click', () => {
@@ -191,3 +195,32 @@ function addCustomOperatorListener (button, value) {
         }
     })
 }
+
+// Add keyboard input
+
+document.addEventListener ('keydown', (event) => {
+    switch(event.keyCode) {
+        case 48:
+        case 49:
+        case 50:
+        case 51:
+        case 52:
+        case 53:
+        case 54:
+        case 55:
+        case 56:
+        case 57:
+            calculatorScreen.textContent += event.key;
+            break;
+        case 111:
+        case 170:
+        case 171:
+        case 173:
+        case 106:
+        case 107:
+        case 109:
+            equationOperator = event.key;
+            calculatorTopScreen.textContent = calculatorScreen.textContent;
+            calculatorScreen.textContent = '';
+    }
+})

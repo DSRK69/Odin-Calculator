@@ -1,15 +1,19 @@
 #container {
     width: 500px;
-    height: 450px;
+    height: 600px;
     background-color: red;
     box-sizing: border-box;
 }
 
-.calculator-screen {
+.screen {
     width: 100%;
-    height: 80px;
+    height: 150px;
     background-color: lightblue;
     box-sizing: border-box;
+}
+
+.calculator-screen {
+    background-color: magenta;
 }
 
 .calculator-buttons {
@@ -28,11 +32,13 @@
     justify-content: space-around;
     height: 100%;
     gap: 5px;
+    background-color: yellow;
 }
 
 .button {
     flex: 1;
-    width: 85%;
+    width: 70%;
+    aspect-ratio: 1 /1;
     background-color: purple;
 
 }
